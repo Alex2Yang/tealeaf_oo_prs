@@ -134,8 +134,8 @@ class Game
 
   def play_again?
     begin
-    puts "#{player.name},play again(y/n)?"
-    answer = gets.chomp
+      puts "#{player.name},play again(y/n)?"
+      answer = gets.chomp
     end until ['y', 'n'].include?(answer)
 
     answer == 'y'
