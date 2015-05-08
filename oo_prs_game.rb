@@ -5,7 +5,7 @@ class Hand
   attr_accessor :name
 
   def to_s
-    case self.name
+    case name
     when 'p'  then 'Paper'
     when 'r'  then 'Rock'
     when 's'  then 'Scissors'
