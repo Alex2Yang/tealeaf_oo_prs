@@ -60,9 +60,9 @@ class Game
     player_choice = player.choice.name
     computer_choice = computer.choice.name
 
-    if player_choice == 'p' && computer_choice == 'r' ||
-       player_choice == 'r' && computer_choice == 's' ||
-       player_choice == 's' && computer_choice == 'p'
+    if (player_choice == 'p' && computer_choice == 'r') ||
+       (player_choice == 'r' && computer_choice == 's') ||
+       (player_choice == 's' && computer_choice == 'p')
       puts "You picked #{player.choice} and computer picked #{computer.choice}."
       display_winning_message(player)
       puts "You won!"
