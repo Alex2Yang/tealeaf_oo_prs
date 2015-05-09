@@ -18,12 +18,24 @@ class Hand
     end
   end
 
+  def paper?
+    value == 'p'
+  end
+
+  def scissors?
+    value == 's'
+  end
+
+  def rock?
+    value == 'r'
+  end
+
   def <=>(other_hand)
     if value == other_hand.value
       0
-    elsif (value == 'p' && other_hand.value == 'r') ||
-          (value == 's' && other_hand.value == 'p') ||
-          (value == 'r' && other_hand.value == 's')
+    elsif ( paper? && other_hand.rock? ) ||
+          ( scissors? && other_hand.paper? ) ||
+          ( rock? && other_hand.scissors? )
       1
     else
       -1
@@ -40,7 +52,7 @@ class Player
   end
 
   def display_hand
-    puts "#{name.downcase.capitalize} picked #{hand}."
+    puts "#{name} picked #{hand}."
   end
 end
 
